@@ -1,0 +1,52 @@
+{
+    "users": [
+      {
+        "id": "maddy123",
+        "name":"Rhea Fernandes",
+        "age":"22",
+        "birthdate":"13-06-1996",
+        "image-url":"",
+        "description": "An Avid Reader with a Curious mind",
+        "friends": [
+            {
+                "name":"Shreya",
+                "image-url":""
+            },
+            {
+                "name":"Raksha",
+                "image-url":""
+            },
+            {
+                "name":"Swetha",
+                "image-url":""
+            },
+            {
+                "name":"Aishwarya",
+                "image-url":""
+            },
+            {
+                "name":"Aishwarya",
+                "image-url":""
+            },
+            {
+                "name":"Aishwarya",
+                "image-url":""
+            },
+            {
+                "name":"Aishwarya",
+                "image-url":""
+            },
+            {
+                "name":"Aishwarya",
+                "image-url":""
+            },
+            {
+                "name":"Aishwarya",
+                "image-url":""
+            }
+        ]
+      }
+    ]
+  }
+
+

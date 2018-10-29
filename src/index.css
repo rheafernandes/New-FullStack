@@ -1,10 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Chewy|Satisfy');
+
+body{
+  overflow: hidden;
+}
+
+.our-logo{
+  font-family: 'Satisfy', cursive;
+  font-size:2rem;
+}
+
 .card{
     position:relative;
     width:18rem;
-  }
-  .float-button{
-    border-radius:100%;
-    position:absolute;
-    top:-20px;
-    right:-10px;
-  }
+}
+
+.float-button{
+  border-radius:50%;
+  position:absolute;
+  top:-20px;
+  right:-10px;
+  z-index:1;
+}
+
+.main-grid{
+  margin-top: 1em;
+}
+
+.info-heading{
+  padding: 0.2em;
+  border-radius: 0.2em;
+  background: #00aced;
+  color: white;
+}
+
+.jumbotron{
+  height: 100vh;
+  margin-bottom: 0;
+}
+
+.flex-row{
+  flex-flow:row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.profile-info{
+  height: 90vh;
+  overflow:auto ;
+}
+
+.profile-card{
+  box-shadow: 5px 5px 5px gray;
+}
+
+.friend-list{
+  /* border:1px solid black; */
+  height: 90vh;
+  overflow-y: auto;
+  /* overflow-x: hidden; */
+}
+
+
+.recommendation-list{
+  /* border:1px solid black; */
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.friend-card{
+  background: rgb(31, 29, 29);
+  padding: 1em;
+  height: 12em;
+  text-align: center;
+}
+
+.recommendation-card{
+  padding-top: 1em;
+  background: rgb(31, 29, 29);
+  height: 13em;
+  width: 12em;
+}
+
+.recommendation-card a{
+  color: whitesmoke;
+}
+
+
+.recommendation-card img{
+  margin: 0 auto;
+  height: 6em;
+  width: 6em;
+}
+
+.friend-card a{
+  color: whitesmoke;
+}
+
+.bg-image{
+  border: 1px solid #00aced; 
+  background: #00aced;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-form,.register-form{
+    width: 40%;
+    margin: 2em auto;
+    padding: 2em;
+    background: rgba(255,255,255,0.4);
+    border-radius: 1em;
+}
+
+.login-logo,.register-logo{
+  padding: 1em;
+  font-family: 'Satisfy', cursive;
+  font-size: 60px; 
+}
+
+.login-head,.register-head{
+  color: #0084b4;
+}
+
+.login-form form,.register-form form{
+  margin: 2em;
+}
+
+.login-form form .form-control{
+  margin-bottom: 2em;
+}
+
+
+.register-form form .form-control{
+  margin-bottom: 2em;
+}
