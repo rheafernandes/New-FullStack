@@ -1,0 +1,10 @@
+.card{
+    position:relative;
+  
+  }
+  .float-button{
+    border-radius:100%;
+    position:absolute;
+    top:-20px;
+    right:-10px;
+  }
