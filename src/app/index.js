@@ -6,6 +6,6 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.css'
 
-// ReactDOM.render(<User /> , document.getElementById('root'));
-ReactDOM.render(<AppRouter/> , document.getElementById('root'));
+ReactDOM.render(<User /> , document.getElementById('root'));
+// ReactDOM.render(<AppRouter/> , document.getElementById('root'));
 
