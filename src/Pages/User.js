@@ -10,7 +10,7 @@ export default class User extends Component {
       <Fragment>
         <Navbar/>
         <MainGrid />
-        {/* <ProfileCard/> */}
+        
       </Fragment>
 
     );

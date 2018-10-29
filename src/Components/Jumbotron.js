@@ -1,4 +1,6 @@
 import React,{Component} from 'react';
+import {NavLink} from 'react-router-dom';
+import Modal from './Modal';
 
 export default class Jumbotron extends Component{
 
@@ -12,9 +14,10 @@ export default class Jumbotron extends Component{
         <p class="text-center">You're ready to go in 2 Simple steps. Enjoy this virtual world we created</p>
         <div class="text-center">
           <a class="btn btn-secondary btn-lg mr-2" href="#" role="button">Sign Up</a>
-              <a class="btn btn-info btn-lg" href="#" role="button">Sign In</a>
+          <button class="btn btn-info btn-lg" href="/" role="button"><NavLink to="/User">Sign in</NavLink></button>
         </div>
         </div>
+        <Modal/>
       </div>
       );
     }
