@@ -6,7 +6,6 @@ import RecommendationCard from './RecommendationCard';
 
 export default class MainGrid extends Component {
     render() {
-        console.log(this.props.userInfo);
         return (
             <div className="container-fluid main-grid">
                 <div className="row">
@@ -15,11 +14,15 @@ export default class MainGrid extends Component {
                         <ProfileCard userInfo={this.props.userInfo}/>
 
                     </div>
+
                     <div className="col-sm-6 text-center friend-list">
                         <h5 class="info-heading">FRIENDS</h5>
                         <div className="d-flex flex-row">
+
                         {
+                            this.props.dispChange === false ?
                             this.props.friendList.map(friend=><FriendCards friendName={friend.name}/>)
+                            :this.props.friendList.map(searched=><FriendCards friendName={searched.name}/>)
                         }
                         </div>
 
