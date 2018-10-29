@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Chewy|Satisfy');
+.our-logo{
+  font-family: 'Satisfy', cursive;
+  font-size:2rem;
+}
 .card{
     position:relative;
     width:18rem;
@@ -27,7 +31,6 @@
   }
 
   .profile-card{
-    
     box-shadow: 5px 5px 5px gray;
   }
 
