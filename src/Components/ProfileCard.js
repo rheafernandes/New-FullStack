@@ -3,7 +3,7 @@ import React from 'react';
 export default class ProfileCard extends React.Component {
     render() {
         return (
-            <div className="card" style={{width: 18 + 'rem'}}>
+            <div className="card">
                 <img className="card-img-top" src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Profile Picture"></img>
                 <div className="card-body text-center">
                     <h5 className="card-title">XYZ PQR</h5>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class MainGrid extends Component {
+export default class MainGrid extends Component {
     render() {
         return (
             <div class="container-fluid">
