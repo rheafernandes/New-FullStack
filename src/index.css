@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Chewy|Satisfy');
 .card{
     position:relative;
     width:18rem;
@@ -7,4 +8,32 @@
     position:absolute;
     top:-20px;
     right:-10px;
+    z-index:1;
+  }
+
+  .jumbotron{
+    height: 100vh;
+    margin-bottom: 0;
+  }
+
+  .d-flex{
+    flex-flow:row wrap;
+  }
+  .profile-info{
+    /* position:fixed; */
+
+    height: 90vh;
+    overflow:auto ;
+  }
+
+  .profile-card{
+    
+    box-shadow: 5px 5px 5px gray;
+  }
+
+  .friend-list{
+    border:1px solid black;
+    height: 90vh;
+    overflow-y: auto;
+    /* overflow-x: hidden; */
   }
