@@ -9,13 +9,39 @@ export default class User extends Component {
     super();
     this.state = {
       user:"",
-      friends:[]
+      friends:[],
+      searchValue:"",
+      searchedUsers:"",
+      dispChange: false
     }
   }
+  handleChangeDisp(e){
+    e.preventDefault();
+    this.setState({
+        dispChange: !this.state.dispChange
+    })
+}
   handleChangedNewEntry(e) {
-    this.setState({ newListName:e.target.value });
-    console.log(this.state.newListName);
+    this.setState({ searchValue:e.target.value });
+    console.log(this.state.searchValue);
   }
+  handleSearchUser(e) {
+    e.preventDefault();
+    axios.get('http://localhost:3001/users')
+    .then(res => 
+        this.setState({
+          searchedUsers:res.data,
+        })
+    ).catch (err => {
+      console.log("Error retreiving Info");
+    });
+    //The below 4 lines are just for testing and are not needed once api is built
+    // console.log("All users",this.state.users);
+    // const searchedList = this.state.users.filter(user => user.name === searchedValue);
+    // this.setState({
+    //     searchedUsers: searchedList
+    // });
+}
   componentDidMount(){
     axios.get('http://localhost:3001/users/maddy123')
     .then(res => 
@@ -32,10 +58,10 @@ export default class User extends Component {
 render() {
   return (
     <Fragment>
-      <Navbar />
+      <Navbar handleChangedNewEntry={this.handleChangedNewEntry.bind(this)} handleSearchUser={this.handleSearchUser.bind(this)} handleChangeDisp={this.handleChangeDisp.bind(this)}/>
       {
               this.state.user?
-              <MainGrid userInfo={this.state.user} friendList={this.state.friends} />
+              <MainGrid userInfo={this.state.user} friendList={this.state.friends} dispChange={this.state.dispChange} searchedUsers={this.state.searchedUsers} />
               :"Please wait till your page loads"
       }
 

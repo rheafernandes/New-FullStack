@@ -5,7 +5,6 @@ import FriendCards from '../Components/FriendCards';
 
 export default class MainGrid extends Component {
     render() {
-        console.log(this.props.userInfo);
         return (
             <div className="container-fluid">
                 <div className="row">
@@ -15,10 +14,16 @@ export default class MainGrid extends Component {
 
                     </div>
                     <div className="col-sm-7 text-center friend-list">
-                        <h5>FRIENDS</h5>
+                        {
+                            this.props.dispChange === false ?
+                            <h5>FRIENDS</h5>
+                            :<h5>RESULTS</h5>
+                        }
                         <div className="d-flex">
                         {
+                            this.props.dispChange === false ?
                             this.props.friendList.map(friend=><FriendCards friendName={friend.name}/>)
+                            :this.props.friendList.map(searched=><FriendCards friendName={searched.name}/>)
                         }
                         </div>
 
