@@ -6,8 +6,8 @@ export default class ProfileCard extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            user:"",
-            userId:this.props.userId
+            user: "",
+            userId: this.props.userId
         }
     }
 

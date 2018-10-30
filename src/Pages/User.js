@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Navbar from '../Components/Navbar';
 import MainGrid from '../Components/MainGrid';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -12,18 +13,67 @@ export default class User extends Component {
       friends: [1,2,3,4,5,6,7],
       searchValue: "",
       searchedUsers: "",
-      dispChange: false
+      dispChange: false,
+      recommendationDisp:false,
+      levelOne:[],
+      levelTwo:[],
+      userDeleted: false
     }
   }
+  handleLevelOne(e){
+    e.preventDefault
+    axios.get('http://localhost:3001/users')
+    .then(res =>
+      this.setState({
+        levelOne: res.data,
+      })
+    ).catch(err => {
+      console.log("Error retreiving Info");
+    });
+
+  }
+  handleLevelOne(e){
+    this.setState({
+      recommendationDisp:false
+    }
+    )
+    e.preventDefault()
+    axios.get(`http://localhost:3001/users/${this.props.location.state.userId}`)
+    .then(res =>
+      this.setState({
+        levelOne: res.data,
+      })
+    ).catch(err => {
+      console.log("Error retreiving Info");
+    });
+  }
+  handleLevelTwo(e){
+    e.preventDefault();
+    this.setState({
+      recommendationDisp:true
+    }
+    )
+    axios.get(`http://localhost:3001/users/${this.props.location.state.userId}`)
+    .then(res =>
+      this.setState({
+        levelTwo: res.data,
+      })
+    ).catch(err => {
+      console.log("Error retreiving Info");
+    });
+  }
+
   handledeleteUser(e) {
     e.preventDefault();
-    axios.delete(`http://localhost:3001//${this.state.user}`)
+    axios.delete(`http://localhost:3001/users/${this.props.location.state.userId}`)
       .then(res => {
         console.log('Deleted User from server');
+        this.setState(() => ({ userDeleted: true }));
       }).catch(err => {
         console.error('There was a problem deleting the board. ERR:', err);
       });
   }
+
   handleChangeDisp(e) {
     e.preventDefault();
     this.setState({
@@ -68,12 +118,29 @@ export default class User extends Component {
   render() {
     return (
       <Fragment>
-        <Navbar handleChangedNewEntry={this.handleChangedNewEntry.bind(this)} handleSearchUser={this.handleSearchUser.bind(this)} handleChangeDisp={this.handleChangeDisp.bind(this)} handleDeleteUser={this.handledeleteUser.bind(this)} />
+        <Navbar 
+          handleLevelOne={this.handleLevelOne.bind(this)} 
+          handleLevelTwo={this.handleLevelTwo.bind(this)} 
+          handleChangedNewEntry={this.handleChangedNewEntry.bind(this)} 
+          handleSearchUser={this.handleSearchUser.bind(this)} 
+          handleChangeDisp={this.handleChangeDisp.bind(this)} 
+          handleDeleteUser={this.handledeleteUser.bind(this)} 
+        />
         {
           this.state.user ?
-            <MainGrid userInfo={this.state.user} friendList={this.state.friends} dispChange={this.state.dispChange} searchedUsers={this.state.searchedUsers} />
+          <MainGrid userInfo={this.state.user} 
+            friendList={this.state.friends} 
+            dispChange={this.state.dispChange} 
+            searchedUsers={this.state.searchedUsers} 
+            userId={this.props.location.state.userId} 
+            levelOne={this.state.levelOne} 
+            levelTwo={this.state.levelTwo}
+            recommendationDisp={this.state.recommendationDisp}
+          />
             : "Please wait till your page loads"
         }
+
+        {(this.state.userDeleted) ? <Redirect to="/loginPage" /> : null}
 
       </Fragment>
 

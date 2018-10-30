@@ -18,7 +18,7 @@ export default class Navbar extends Component {
                     </form>
                     <ul className="navbar-nav ml-auto ">
                         <li className="nav-item">
-                            <a className="nav-link text-info" href="#">Delete Account<span className="sr-only">(current)</span></a>
+                            <a className="nav-link text-info" href="#" onClick={this.props.handleDeleteUser}>Delete Account<span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link text-info"><NavLink to="/loginPage">Logout</NavLink></a>
@@ -28,8 +28,8 @@ export default class Navbar extends Component {
                                 Recommendation
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="#">Level 1</a>
-                                <a className="dropdown-item" href="#">Level 2</a>
+                                <a className="dropdown-item" href="#" onClick={this.props.handleLevelOne.bind(this)}>Level 1</a>
+                                <a className="dropdown-item" href="#" onClick={this.props.handleLevelTwo.bind(this)}>Level 2</a>
                                 <div className="dropdown-divider"></div>
                                 <a className="dropdown-item" href="#">Level 3</a>
                             </div>
