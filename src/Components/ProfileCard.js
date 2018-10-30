@@ -6,12 +6,13 @@ export default class ProfileCard extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            user:""
+            user:"",
+            userId:this.props.userId
         }
     }
 
     componentDidMount(){
-        axios.get(`http://localhost:3001/users/${this.props.userId}`)
+        axios.get(`http://localhost:3001/users/${this.state.userId}`)
             .then(res=> 
                 this.setState(
                     {
@@ -22,8 +23,6 @@ export default class ProfileCard extends React.Component {
     }
 
     render() {
-        console.log(this.state.user);
-        console.log(this.props.userId);
         return (
             <div className="card profile-card bg-dark text-light">
                 <img className="card-img-top" src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Profile Picture"></img>
