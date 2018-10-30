@@ -15,7 +15,7 @@ export default class AppRouter extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route path="/" exact component={Login}></Route>
-                    <Route path="/User" exact component={User}></Route>
+                    <Route path="/User/:id" exact component={User}></Route>
                     <Route path="/loginPage" exact component={LoginPage}></Route>
                     <Route path="/registerPage" exact component={RegisterPage}></Route>
                 </Switch>

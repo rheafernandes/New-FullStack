@@ -12,7 +12,6 @@ export default class FriendCards extends Component {
 
     showFriendData(e){
         e.preventDefault();
-        // console.log();
         this.setState({
             showFriend:true
         });
@@ -27,7 +26,7 @@ export default class FriendCards extends Component {
                     <h5 className="card-title">
                         <a href="#" onClick={this.showFriendData.bind(this)}>{this.props.friendName}</a>
                         {(this.state.showFriend) ? <Redirect to={{
-                            pathname:"/User",
+                            pathname: `/User/${this.props.friendId}`,
                             state:{
                                 userId:this.props.friendId
                         }}}/>:null}

@@ -102,7 +102,7 @@ export default class User extends Component {
     // });
   }
   componentDidMount() {
-    console.log(this.state.userId);
+    console.log('called componentDidMount()');
     axios.get(`http://localhost:3001/users/${this.props.location.state.userId}`)
       .then(res =>
         this.setState({
@@ -112,10 +112,10 @@ export default class User extends Component {
       ).catch(err => {
         console.log("Error retreiving Info");
       });
-
   }
 
   render() {
+    // console.log('this.props', this.props.match.params);
     return (
       <Fragment>
         <Navbar 
