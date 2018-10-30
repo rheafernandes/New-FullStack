@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Chewy|Permanent+Marker|Satisfy');
 body{
-  overflow: hidden;
+  /* overflow: hidden; */
   background: url('./images/profile_bg.jpg');
 }
 
@@ -54,11 +54,6 @@ body{
 .profile-info{
   height: 90vh;
   overflow:auto ;
-}
-
-
-.profile-info .card{
-  height: 80vh;
 }
 
 .profile-card{
@@ -124,7 +119,7 @@ body{
 }
 
 .login-logo,.register-logo{
-  padding: 1em;
+  padding: 0.5em;
   font-family: 'Satisfy', cursive;
   text-shadow: 2px 2px 2px #333;
   font-weight: 600;

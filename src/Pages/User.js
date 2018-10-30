@@ -52,7 +52,8 @@ export default class User extends Component {
     // });
   }
   componentDidMount() {
-    axios.get('http://localhost:3001/users/maddy123')
+    console.log(this.state.userId);
+    axios.get('http://localhost:3001/users/'+this.state.userId)
       .then(res =>
         this.setState({
           user: res.data,
