@@ -9,7 +9,7 @@ export default class User extends Component {
     super();
     this.state = {
       user: "",
-      friends: [],
+      friends: [1,2,3,4,5,6,7],
       searchValue: "",
       searchedUsers: "",
       dispChange: false
@@ -53,7 +53,7 @@ export default class User extends Component {
   }
   componentDidMount() {
     console.log(this.state.userId);
-    axios.get('http://localhost:3001/users/'+this.state.userId)
+    axios.get(`http://localhost:3001/users/${this.props.location.state.userId}`)
       .then(res =>
         this.setState({
           user: res.data,

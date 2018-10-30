@@ -10,7 +10,7 @@ export default class LoginPage extends React.Component{
         this.state = {
             users:"",
             id:"",
-            userPresent: false
+            userPresent: ""
         }
     }
 
@@ -43,7 +43,7 @@ export default class LoginPage extends React.Component{
     render(){
         return(
             <Fragment>
-                <div className="container-fluid bg-image">
+                <div className="bg-image">
                     <h1 className="text-center login-logo text-light">Friend-Zone</h1>
                     <div className="login-form">
                         <h3 className="text-center login-head">Login</h3>
