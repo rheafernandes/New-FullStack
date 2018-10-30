@@ -26,8 +26,8 @@ export default class MainGrid extends Component {
 
                                 {
                                     this.props.dispChange === false ?
-                                        this.props.friendList.map(friend => <FriendCards friendName={friend.name} />)
-                                        : this.props.friendList.map(searched => <FriendCards friendName={searched.name} />)
+                                        this.props.friendList.map(friend => <FriendCards friendName={friend.name} friendId={friend.id} />)
+                                        : this.props.friendList.map(searched => <FriendCards friendName={searched.name} friendId={friend.id} />)
                                 }
                             </div>
 
