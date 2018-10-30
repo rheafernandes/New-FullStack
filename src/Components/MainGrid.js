@@ -16,7 +16,12 @@ export default class MainGrid extends Component {
                     </div>
 
                     <div className="col-sm-6 text-center friend-list">
-                        <h5 class="info-heading">FRIENDS</h5>
+                        <div>
+                            {
+                                this.props.dispChange===false?<h5 className="info-heading">FRIENDS</h5>:
+                                <h5 className="info-heading">RESULTS</h5>
+                            }
+                        </div>
                         <div className="d-flex flex-row">
 
                         {
@@ -28,7 +33,7 @@ export default class MainGrid extends Component {
 
                     </div>
                     <div className="col-sm-3 text-center recommendation-list">
-                    <h5 class="info-heading">RECOMMENDATION</h5>
+                    <h5 className="info-heading">RECOMMENDATION</h5>
                     <div className="d-flex flex-column">
                         {
                             this.props.friendList.map(friend=><RecommendationCard friendName={friend.name}/>)
