@@ -8,6 +8,7 @@ body{
   color: #5bc0de;
   text-decoration: none;
 }
+
 .display-4{
   font-family: 'Satisfy', cursive;
   color: whitesmoke;
@@ -16,13 +17,14 @@ body{
   font-weight: bold;
   text-shadow: 4px 4px 2px black;
 }
-p{
+.jumbo-para{
   font-family: 'Permanent Marker', cursive;
   color: whitesmoke;
   font-size: 1.5rem;
   letter-spacing: .3rem;
   text-shadow: 2px 2px 2px black;
 }
+
 .our-logo{
   font-family: 'Satisfy', cursive;
   font-size:2rem;
@@ -35,6 +37,7 @@ p{
 
 .float-button{
   border-radius:50%;
+  color: whitesmoke;
   position:absolute;
   top:-20px;
   right:-10px;
@@ -48,7 +51,7 @@ p{
 .info-heading{
   padding: 0.2em;
   border-radius: 0.2em;
-  background: rgb(68, 67, 67);
+  background: #343a40;
   font-family: 'Permanent Marker', cursive;
   font-size: 1.5em;
   color: #00aced;
@@ -89,7 +92,7 @@ p{
 }
 
 .friend-card{
-  background: rgb(31, 29, 29);
+  background: #343a40;
   padding: 1em;
   height: 12em;
   text-align: center;
@@ -97,13 +100,13 @@ p{
 
 .recommendation-card{
   padding-top: 1em;
-  background: rgb(31, 29, 29);
+  background: #343a40;
   height: 13em;
   width: 12em;
 }
 
 .recommendation-card a{
-  color: whitesmoke;
+  color: #17a2b8;
 }
 
 
@@ -114,12 +117,11 @@ p{
 }
 
 .friend-card a{
-  color: whitesmoke;
+  color: #17a2b8;
 }
 
 .bg-image{
-  border: 1px solid #00aced; 
-  /* background: #00aced; */
+  border: 1px solid #17a2b8; 
   background: url('./images/friend_bg.jpg') no-repeat; 
   height: 100vh;
   background-size: cover;
