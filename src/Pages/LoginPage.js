@@ -5,7 +5,7 @@ export default class LoginPage extends React.Component{
     render(){
         return(
             <Fragment>
-                <div className="bg-image">
+                <div className="container-fluid bg-image">
                     <h1 className="text-center login-logo text-light">Friend-Zone</h1>
                     <div className="login-form">
                         <h3 className="text-center login-head">Login</h3>
