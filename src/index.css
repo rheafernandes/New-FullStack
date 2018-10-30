@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Chewy|Satisfy');
-
+@import url('https://fonts.googleapis.com/css?family=Chewy|Permanent+Marker|Satisfy');
 body{
   overflow: hidden;
   background: url('./images/profile_bg.jpg');
@@ -35,8 +34,10 @@ body{
 .info-heading{
   padding: 0.2em;
   border-radius: 0.2em;
-  background: #343a40;
-  color: white;
+  background: rgb(68, 67, 67);
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5em;
+  color: #00aced;
 }
 
 .jumbotron{
