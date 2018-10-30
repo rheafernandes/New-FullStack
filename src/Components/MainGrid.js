@@ -34,19 +34,12 @@ export default class MainGrid extends Component {
 
                     </div>
                     <div className="col-sm-3 text-center recommendation-list">
-<<<<<<< HEAD
-                        <h5 class="info-heading">RECOMMENDATION</h5>
-                        <div className="d-flex flex-column">
-                            {
-                                this.props.friendList.map(friend => <RecommendationCard friendName={friend.name} />)
-                            }
-=======
                     <h5 className="info-heading">RECOMMENDATION</h5>
                     <div className="d-flex flex-column">
                         {
                             this.props.friendList.map(friend=><RecommendationCard friendName={friend.name}/>)
                         }
->>>>>>> 5748bd296dc388ba39a4e44999932e93c201f49e
+
                         </div>
                     </div>
                 </div>
