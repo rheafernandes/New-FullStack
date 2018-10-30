@@ -13,7 +13,7 @@ export default class MainGrid extends Component {
                     <div className="row d-flex">
                         <div className="col-sm-3 text-center profile-info">
                             <h5 class="info-heading text-info">PROFILE INFORMATION</h5>
-                            <ProfileCard userInfo={this.props.userInfo} userId= {this.props.userId} />
+                            <ProfileCard userInfo={this.props.userInfo} userId={this.props.userId} />
                         </div>
 
                         <div className="col-sm-6 text-center friend-list">
@@ -40,9 +40,10 @@ export default class MainGrid extends Component {
                             }
                             <div className="d-flex flex-column">
                                 {
+                                    this.props.recommendationDisp === false ?
                                     this.props.friendList.map(friend => <RecommendationCard friendName={friend.name} />)
+                                    :this.props.friendList.map(friend => <RecommendationCard friendName={friend.name} />)
                                 }
-
                             </div>
                         </div>
                     </div>
@@ -83,7 +84,9 @@ export default class MainGrid extends Component {
                             }
                             <div className="d-flex flex-column">
                                 {
-                                    [1, 2, 3, 4, 5, 6, 7].map(friend => <RecommendationCard friendName={friend.name} />)
+                                    this.props.recommendationDisp === false ?
+                                    [1,2,3,4,5,6].map(friend => <RecommendationCard friendName={friend.name} />)
+                                    :[1,2,3,4,5,6].map(friend => <RecommendationCard friendName={friend.name} />)
                                 }
                             </div>
                         </div>
