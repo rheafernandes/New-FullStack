@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom';
 
 
 export default class Navbar extends Component {
@@ -16,11 +17,11 @@ export default class Navbar extends Component {
                         <button className="btn btn-outline-info my-2 my-sm-0" type="submit" onClick={this.props.handleChangeDisp.bind(this)}>Search</button>
                     </form>
                     <ul className="navbar-nav ml-auto ">
-                        <li className="nav-item active">
+                        <li className="nav-item">
                             <a className="nav-link text-info" href="#">Delete Account<span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-info" href="#">Logout</a>
+                            <a className="nav-link text-info"><NavLink to="/loginPage">Logout</NavLink></a>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

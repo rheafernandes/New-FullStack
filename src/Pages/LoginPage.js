@@ -11,7 +11,7 @@ export default class LoginPage extends React.Component{
                         <h3 className="text-center login-head">Login</h3>
                         <form className="text-center">
                             <input type="text" placeholder="Enter Username" className="form-control" />
-                            <NavLink to="/User"><input type="submit" value="Login" className="btn" /></NavLink>
+                            <NavLink to="/User"><input type="submit" value="Login" className="btn btn-info" /></NavLink>
                         </form>
                     </div>
                 </div>

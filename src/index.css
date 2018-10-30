@@ -3,6 +3,11 @@ body{
   overflow: hidden;
 }
 
+.nav-item a{
+  color: #5bc0de;
+  text-decoration: none;
+}
+
 .our-logo{
   font-family: 'Satisfy', cursive;
   font-size:2rem;
@@ -100,8 +105,10 @@ body{
 
 .bg-image{
   border: 1px solid #00aced; 
-  background: #00aced;
+  /* background: #00aced; */
+  background: url('./images/friend_bg.jpg') no-repeat; 
   height: 100vh;
+  background-size: cover;
   margin: 0;
 }
 
@@ -120,7 +127,9 @@ body{
 }
 
 .login-head,.register-head{
-  color: #0084b4;
+  color: white;
+  text-shadow: 5px 2px 5px black;
+  font-size: 30px;
 }
 
 .login-form form,.register-form form{
@@ -134,4 +143,8 @@ body{
 
 .register-form form .form-control{
   margin-bottom: 2em;
+}
+
+a{
+  text-decoration: none;
 }
