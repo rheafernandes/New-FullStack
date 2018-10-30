@@ -9,18 +9,22 @@
       "description": "An Avid Reader with a Curious mind",
       "friends": [
         {
+          "id":"shah123",
           "name": "Shreya",
           "image-url": ""
         },
         {
+          "id":"Raksha123",
           "name": "Raksha",
           "image-url": ""
         },
         {
+          "id":"Swetha123",
           "name": "Swetha",
           "image-url": ""
         },
-        {
+        { 
+          "id" : "Aish123",
           "name": "Aishwarya",
           "image-url": ""
         },
@@ -55,18 +59,22 @@
       "description": "I love unicorns and all things sweet",
       "friends": [
         {
+          "id": "maddy123",
           "name": "Rhea",
           "image-url": ""
         },
         {
+          "id": "Raksha123",
           "name": "Raksha",
           "image-url": ""
         },
         {
+          "id": "Swetha123",
           "name": "Swetha",
           "image-url": ""
         },
         {
+          "id": "Aish123",
           "name": "Aishwarya",
           "image-url": ""
         }
@@ -76,19 +84,43 @@
       "id": "Raksha123",
       "description": "lkasfklak falkfjlakjf dakjfklaf alkjfladkf ;agkalsgjkslgj jgklsjlakjlgj;jgsagkjsfhgk jasghi; ",
       "age": "22",
-      "name": "Rakshanda Noor "
+      "name": "Rakshanda Noor ",
+      "friends": [
+        {
+          "id": "maddy123",
+          "name": "Rhea",
+          "image-url": ""
+        },
+        {
+          "id": "Aish123",
+          "name": "Aishwarya",
+          "image-url": ""
+        }
+      ]
     },
     {
-      "id": "Aish ",
+      "id": "Aish123",
       "description": "Nothing",
       "age": "21",
-      "name": "Aishwarya"
-    },
-    {
-      "id": "Kamlee123",
-      "description": "afhfjka fajjfka fajfkfjakf fajkhfja kajfkfjk aa",
-      "age": "21",
-      "name": "Kamleeshwary"
+      "name": "Aishwarya",
+      "friends": [
+        {
+          "id": "maddy123",
+          "name": "Rhea",
+          "image-url": ""
+        },
+        {
+          "id": "Raksha123",
+          "name": "Raksha",
+          "image-url": ""
+        },
+        {
+          "id":"shah123",
+          "name": "Shreya",
+          "image-url": ""
+        }
+      ]
+
     }
   ]
 }
