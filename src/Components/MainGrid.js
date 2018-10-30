@@ -7,7 +7,7 @@ import RecommendationCard from './RecommendationCard';
 export default class MainGrid extends Component {
     render() {
         return (
-            <div className="container-fluid main-grid">
+            <div className="container-fluid d-flex main-grid">
                 <div className="row d-flex">
                     <div className="col-sm-3 text-center profile-info">
                         <h5 class="info-heading">PROFILE INFORMATION</h5>
@@ -19,8 +19,6 @@ export default class MainGrid extends Component {
                             this.props.dispChange === false ?
                             <h5 class="info-heading">FRIENDS</h5>
                             :<h5 class="info-heading">RESULTS</h5>
-
-
                         }
                         <div className="d-flex flex-row">
 

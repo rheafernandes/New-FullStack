@@ -8,7 +8,21 @@ body{
   color: #5bc0de;
   text-decoration: none;
 }
-
+.display-4{
+  font-family: 'Satisfy', cursive;
+  color: whitesmoke;
+  font-size: 5rem;
+  letter-spacing: .3rem;
+  font-weight: bold;
+  text-shadow: 4px 4px 2px black;
+}
+p{
+  font-family: 'Permanent Marker', cursive;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  letter-spacing: .3rem;
+  text-shadow: 2px 2px 2px black;
+}
 .our-logo{
   font-family: 'Satisfy', cursive;
   font-size:2rem;
@@ -43,6 +57,8 @@ body{
 .jumbotron{
   height: 100vh;
   margin-bottom: 0;
+  background: url('./images/tarbo-exxxpiation-art-fon-devushka-anime-gorod-zonty-siluety.jpg');
+  background-size: cover;
 }
 
 .flex-row{
@@ -113,7 +129,8 @@ body{
 .login-form,.register-form{
     width: 40%;
     margin: 2em auto;
-    padding: 2em;
+    padding-top: 2em;
+    padding-bottom:0.2em;
     background: rgba(255,255,255,0.4);
     border-radius: 1em;
 }
