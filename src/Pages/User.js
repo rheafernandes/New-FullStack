@@ -71,7 +71,7 @@ export default class User extends Component {
         <Navbar handleChangedNewEntry={this.handleChangedNewEntry.bind(this)} handleSearchUser={this.handleSearchUser.bind(this)} handleChangeDisp={this.handleChangeDisp.bind(this)} handleDeleteUser={this.handledeleteUser.bind(this)} />
         {
           this.state.user ?
-            <MainGrid userInfo={this.state.user} friendList={this.state.friends} dispChange={this.state.dispChange} searchedUsers={this.state.searchedUsers} />
+            <MainGrid userInfo={this.state.user} friendList={this.state.friends} dispChange={this.state.dispChange} searchedUsers={this.state.searchedUsers} userId={this.props.location.state.userId}/>
             : "Please wait till your page loads"
         }
 
