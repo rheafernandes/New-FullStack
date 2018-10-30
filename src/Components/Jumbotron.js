@@ -1,8 +1,6 @@
 import React, { Fragment,Component } from 'react';
 import Modal from './Modal';
 import {NavLink} from 'react-router-dom'
-import ModalComponent from './Modal';
-
 
 export class Jumbotron extends Component {
   render() {
