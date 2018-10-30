@@ -13,7 +13,7 @@ export default class MainGrid extends Component {
                     <div className="row d-flex">
                         <div className="col-sm-3 text-center profile-info">
                             <h5 class="info-heading text-info">PROFILE INFORMATION</h5>
-                            <ProfileCard userInfo={this.props.userInfo} userId={this.props.userId} />
+                            <ProfileCard userInfo={this.props.userInfo} userId= {this.props.userId} />
                         </div>
 
                         <div className="col-sm-6 text-center friend-list">
