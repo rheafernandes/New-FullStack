@@ -1,6 +1,6 @@
 import React,{Fragment} from 'react';
 
-export default class LoginPage extends React.Component{
+export default class RegisterPage extends React.Component{
     render(){
         return(
             <Fragment>

@@ -2,6 +2,7 @@
 
 body{
   overflow: hidden;
+  background: url('./images/profile_bg.jpg');
 }
 
 .nav-item a{
@@ -34,7 +35,7 @@ body{
 .info-heading{
   padding: 0.2em;
   border-radius: 0.2em;
-  background: rgb(31, 29, 29);;
+  background: #343a40;
   color: white;
 }
 
@@ -54,20 +55,22 @@ body{
   overflow:auto ;
 }
 
+
+.profile-info .card{
+  height: 80vh;
+}
+
 .profile-card{
   box-shadow: 5px 5px 5px gray;
 }
 
 .friend-list{
-  /* border:1px solid black; */
   height: 90vh;
   overflow-y: auto;
-  /* overflow-x: hidden; */
 }
 
 
 .recommendation-list{
-  /* border:1px solid black; */
   height: 90vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -122,13 +125,15 @@ body{
 .login-logo,.register-logo{
   padding: 1em;
   font-family: 'Satisfy', cursive;
-  font-size: 60px; 
+  text-shadow: 2px 2px 2px #333;
+  font-weight: 600;
+  font-size: 70px; 
 }
 
 .login-head,.register-head{
   color: white;
-  text-shadow: 5px 2px 5px black;
-  font-size: 30px;
+  text-shadow: 2px 2px 2px black;
+  font-size: 45px;
 }
 
 .login-form form,.register-form form{
