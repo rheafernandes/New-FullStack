@@ -12,7 +12,7 @@ export default class Navbar extends Component {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form className="form-inline my-2 my-lg-0 ml-auto" onSubmit={this.props.handleSearchUser.bind(this)}> 
+                    <form className="form-inline my-2 my-lg-0 ml-auto"> 
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={this.props.handleChangedNewEntry.bind(this)} />
                         <button className="btn btn-outline-info my-2 my-sm-0" type="submit" onClick={this.props.handleChangeDisp.bind(this)}>Search</button>
                     </form>

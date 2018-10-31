@@ -5,21 +5,6 @@ export default class ProfileCard extends React.Component {
     
     constructor(props){
         super(props);
-        this.state = {
-            user: "",
-            userId: this.props.userId
-        }
-    }
-
-    componentDidMount(){
-        axios.get(`http://localhost:3001/users/${this.state.userId}`)
-            .then(res=> 
-                this.setState(
-                    {
-                        user:res.data.id
-                    }
-                )    
-            )
     }
 
     render() {

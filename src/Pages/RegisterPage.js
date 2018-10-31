@@ -32,13 +32,13 @@ export default class RegisterPage extends React.Component{
         e.preventDefault();
         console.log("Entering Add User");
         const newUser = {
-            id: this.state.id,
+            username: this.state.id,
             description:this.state.description,
             age:this.state.age,
             name:this.state.name
         };
 
-        axios.post('http://localhost:3001/users', newUser)
+        axios.post('http://localhost:8080/api/v1/adduser', newUser)
             .then(res => {
                 console.log("User is created")
                 responseString="User is created";

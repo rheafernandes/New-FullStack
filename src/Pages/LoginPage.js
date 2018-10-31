@@ -9,13 +9,13 @@ export default class LoginPage extends React.Component{
         super(props);
         this.state = {
             users:"",
-            id:"",
+            username:"",
             userPresent: ""
         }
     }
 
     componentDidMount(){
-        axios.get('http://localhost:3001/users')
+        axios.get('http://localhost:8080/api/v1/getuser')
             .then(res=>
                     this.setState({
                         users: res.data
@@ -26,7 +26,7 @@ export default class LoginPage extends React.Component{
     handleOnChangeInput(e){
         e.preventDefault();
         this.setState({
-            id:e.target.value
+            username:e.target.value
             
         });
     }
@@ -35,7 +35,7 @@ export default class LoginPage extends React.Component{
 
     handleLoginUser(e){
         console.log("checking if user exists");
-        const index = this.state.users.findIndex(u => u.id === this.state.id);
+        const index = this.state.users.findIndex(u => u.username === this.state.username);
         console.log('index', index);
         if (index > -1) this.setState(() => ({ userPresent: true})); 
     }
@@ -49,9 +49,9 @@ export default class LoginPage extends React.Component{
                         <h3 className="text-center login-head">Login</h3>
                         <form className="text-center" onSubmit={e => e.preventDefault()}>
                             <input type="text" placeholder="Enter Username" className="form-control" onChange={this.handleOnChangeInput.bind(this)}/>
-                            <button className="btn btn-info" onClick={this.handleLoginUser.bind(this, this.state.id)}>Login</button>
+                            <button className="btn btn-info" onClick={this.handleLoginUser.bind(this, this.state.username)}>Login</button>
                         </form>
-                        {(this.state.userPresent) ? <Redirect to={{pathname:"/User",state:{userId:this.state.id}}}/>: <Redirect to="/loginPage" />}
+                        {(this.state.userPresent) ? <Redirect to={{pathname:"/User",state:{username:this.state.username}}}/>: <Redirect to="/loginPage" />}
                     </div>
                 </div>
             </Fragment>
