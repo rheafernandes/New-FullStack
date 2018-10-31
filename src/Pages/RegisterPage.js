@@ -1,7 +1,7 @@
 import React,{Fragment} from 'react';
 import axios from 'axios';
 import {NavLink} from 'react-router-dom'
-let responseString;
+import Redirect from 'react-router-dom/Redirect';
 export default class RegisterPage extends React.Component{
     constructor(props){
         super();
@@ -9,7 +9,8 @@ export default class RegisterPage extends React.Component{
             id:"",
             description:"",
             age:"",
-            name:""
+            name:"",
+            userCreated:false
         }
     }
     handleChangeUsernameEntry(e) {
@@ -41,10 +42,9 @@ export default class RegisterPage extends React.Component{
         axios.post('http://localhost:8080/api/v1/adduser', newUser)
             .then(res => {
                 console.log("User is created")
-                responseString="User is created";
+                this.setState(() => ({ userCreated: true }));
             }).catch(err => {
                 console.log("Error Creating a User, May already exist");
-                responseString="Error Creating a User, May already exist";
             });
 
     }
@@ -60,10 +60,12 @@ export default class RegisterPage extends React.Component{
                             <input type="text" placeholder="Name" className="form-control" onChange={this.handleChangeNameEntry.bind(this)} />
                             <input type="text" placeholder="Enter Description" className="form-control" onChange={this.handleChangeDescriptionEntry.bind(this)} />
                             <input type="text" placeholder="Enter Age" className="form-control" onChange={this.handleChangeAgeEntry.bind(this)}/>
-                            <button type="submit" className="btn btn-info" ><NavLink to="/loginPage">Register</NavLink></button>
+                            <button type="submit" className="btn btn-info" >Register</button>
                         </form>
                     </div>
                 </div>
+                {(this.state.userCreated) ? <Redirect to="/loginPage" /> : null}
+
             </Fragment>
         );
     }

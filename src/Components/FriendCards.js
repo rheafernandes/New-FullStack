@@ -36,10 +36,11 @@ export default class FriendCards extends Component {
 
                         <button class="username-btn" onClick={this.showFriendData.bind(this)} >{this.props.friendName}</button>
                         {this.props.display==="block"?<button href="#" className="btn btn-info" onClick={this.handleAddUser.bind(this)}>Add Friend</button>:null}
-                        {(this.state.showFriend) ? <Redirect to={{pathname:"/User",state:{userId:this.props.friendId}}}/>: null}
+                        
                     </h5>
                     <a href="#" onClick={this.handleRemoveFriend.bind(this)} className="btn float-button btn-danger">x</a><br /><br />
                 </div>
+                {(this.state.showFriend) ? <Redirect to={{pathname:"/User",state:{username:this.props.friendId}}}/>: null}
             </div>
 
         );

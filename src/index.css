@@ -37,6 +37,10 @@ body{
   font-family: 'Satisfy', cursive;
   font-size:2rem;
 }
+.card-body{
+  padding-left:0;
+  padding-right:0;
+}
 
 .card{
     position:relative;
@@ -63,6 +67,7 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5em;
   color: #00aced;
+  box-shadow:5px 5px 5px gray;
 }
 
 .jumbotron{
@@ -104,6 +109,7 @@ body{
   padding: 1em;
   height: 12em;
   text-align: center;
+  box-shadow:5px 5px 5px gray;
 }
 
 .recommendation-card{
@@ -111,6 +117,7 @@ body{
   background: #343a40;
   height: 13em;
   width: 12em;
+  box-shadow:5px 5px 5px gray;
 }
 
 .recommendation-card a{
