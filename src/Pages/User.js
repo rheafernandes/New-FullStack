@@ -6,72 +6,85 @@ import axios from 'axios';
 
 
 export default class User extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       user: "",
-      friends: [1,2,3,4,5,6,7],
+      friends: [1, 2, 3, 4, 5, 6, 7],
       searchValue: "",
       searchedUsers: "",
       dispChange: false,
-      recommendationDisp:false,
-      levelOne:[],
-      levelTwo:[],
-      userDeleted: false
+      recommendationDisp: false,
+      levelOne: [],
+      levelTwo: [],
+      userDeleted: false,
+      userId: this.props.location.state.userId
     }
   }
-  handleLevelOne(e){
-    e.preventDefault
-    axios.get('http://localhost:3001/users')
-    .then(res =>
-      this.setState({
-        levelOne: res.data,
-      })
-    ).catch(err => {
-      console.log("Error retreiving Info");
-    });
 
-  }
-  handleLevelOne(e){
+  handleLevelOne(e) {
     this.setState({
-      recommendationDisp:false
+      recommendationDisp: false
     }
     )
     e.preventDefault()
-    axios.get(`http://localhost:3001/users/${this.props.location.state.userId}`)
-    .then(res =>
-      this.setState({
-        levelOne: res.data,
-      })
-    ).catch(err => {
-      console.log("Error retreiving Info");
-    });
+    axios.get(`http://localhost:3001/users/${this.props.location.state.userId}/1`)
+      .then(res =>
+        this.setState({
+          levelOne: res.data,
+        })
+      ).catch(err => {
+        console.log("Error retreiving Info");
+      });
   }
-  handleLevelTwo(e){
+  handleLevelTwo(e) {
     e.preventDefault();
     this.setState({
-      recommendationDisp:true
+      recommendationDisp: true
     }
     )
-    axios.get(`http://localhost:3001/users/${this.props.location.state.userId}`)
-    .then(res =>
-      this.setState({
-        levelTwo: res.data,
-      })
-    ).catch(err => {
-      console.log("Error retreiving Info");
-    });
+    axios.get(`http://localhost:3001/users/${this.props.location.state.userId}/2`)
+      .then(res =>
+        this.setState({
+          levelTwo: res.data,
+        })
+      ).catch(err => {
+        console.log("Error retreiving Info");
+      });
   }
 
   handledeleteUser(e) {
     e.preventDefault();
     axios.delete(`http://localhost:3001/users/${this.props.location.state.userId}`)
-      .then(res => {
+      .then(() => {
         console.log('Deleted User from server');
         this.setState(() => ({ userDeleted: true }));
       }).catch(err => {
         console.error('There was a problem deleting the board. ERR:', err);
       });
+  }
+  addFriend(friendId) {
+    const data = {
+      userId: this.props.location.state.userId,
+      friendId: friendId
+    }
+    axios.put(`http://localhost:3001/users/${this.props.location.state.userId}/${friendId}`,"some data")
+    .then(res =>{
+      this.setState(()=>({user:res.data}))
+    }
+
+    )
+    
+    console.log(this.props.location.state.userId + " has added " + friendId);
+  }
+
+  removeFriend(friendId) {
+    axios.put(`http://localhost:3001/users/${friendId}`,"some data")
+    .then(res =>{
+      this.setState(()=>({user:res.data}))
+    }
+    )
+    console.log(this.state.userId + " removed " + friendId);
   }
 
   handleChangeDisp(e) {
@@ -86,7 +99,7 @@ export default class User extends Component {
   }
   handleSearchUser(e) {
     e.preventDefault();
-    axios.get('http://localhost:3001/users')
+    axios.get(`http://localhost:3001/users/${this.state.searchValue}`)
       .then(res =>
         this.setState({
           searchedUsers: res.data,
@@ -113,37 +126,49 @@ export default class User extends Component {
         console.log("Error retreiving Info");
       });
   }
+  changeUserPage() {
+    axios.get(`http://localhost:3001/users/${this.props.location.state.userId}`)
+      .then(res =>
+        this.setState({
+          user: res.data,
+          friends: res.data.friends
+        })
+      ).catch(err => {
+        console.log("Error retreiving Info");
+      });
+  }
 
   render() {
-    // console.log('this.props', this.props.match.params);
     return (
       <Fragment>
-        <Navbar 
-          handleLevelOne={this.handleLevelOne.bind(this)} 
-          handleLevelTwo={this.handleLevelTwo.bind(this)} 
-          handleChangedNewEntry={this.handleChangedNewEntry.bind(this)} 
-          handleSearchUser={this.handleSearchUser.bind(this)} 
-          handleChangeDisp={this.handleChangeDisp.bind(this)} 
-          handleDeleteUser={this.handledeleteUser.bind(this)} 
+        <Navbar
+          handleLevelOne={this.handleLevelOne.bind(this)}
+          handleLevelTwo={this.handleLevelTwo.bind(this)}
+          handleChangedNewEntry={this.handleChangedNewEntry.bind(this)}
+          handleSearchUser={this.handleSearchUser.bind(this)}
+          handleChangeDisp={this.handleChangeDisp.bind(this)}
+          handleDeleteUser={this.handledeleteUser.bind(this)}
         />
         {
           this.state.user ?
-          <MainGrid userInfo={this.state.user} 
-            friendList={this.state.friends} 
-            dispChange={this.state.dispChange} 
-            searchedUsers={this.state.searchedUsers} 
-            userId={this.props.location.state.userId} 
-            levelOne={this.state.levelOne} 
-            levelTwo={this.state.levelTwo}
-            recommendationDisp={this.state.recommendationDisp}
-          />
+            <MainGrid userInfo={this.state.user}
+              friendList={this.state.friends}
+              dispChange={this.state.dispChange}
+              searchedUsers={this.state.searchedUsers}
+              userId={this.state.userId}
+              levelOne={this.state.levelOne}
+              levelTwo={this.state.levelTwo}
+              addFriend={this.addFriend.bind(this)}
+              removeFriend={this.removeFriend.bind(this)}
+              recommendationDisp={this.state.recommendationDisp}
+              changeUserPage={this.changeUserPage.bind(this)}
+            />
             : "Please wait till your page loads"
         }
 
         {(this.state.userDeleted) ? <Redirect to="/loginPage" /> : null}
 
       </Fragment>
-
     );
   }
 }

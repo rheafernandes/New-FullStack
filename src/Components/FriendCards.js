@@ -12,26 +12,33 @@ export default class FriendCards extends Component {
 
     showFriendData(e){
         e.preventDefault();
+        const showFriend = this.state.showFriend;
         this.setState({
-            showFriend:true
+            showFriend: !showFriend
         });
+        this.props.changeUserPage();
+    }
+
+    handleAddUser(e){
+        this.props.addFriend(this.props.friendId);
+    }
+
+    handleRemoveFriend(e){
+        this.props.removeFriend(this.props.friendId);
     }
     
     render() {
-        console.log("Friend id:",this.props.friendId);
         return (
             <div className="card col-sm-3 mx-2 my-5 friend-card" >
                 <img className="card-img-top" src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Profile Picture"></img>
                 <div className="card-body text-center">
                     <h5 className="card-title">
-                        <a href="#" onClick={this.showFriendData.bind(this)}>{this.props.friendName}</a>
-                        {(this.state.showFriend) ? <Redirect to={{
-                            pathname: `/User/${this.props.friendId}`,
-                            state:{
-                                userId:this.props.friendId
-                        }}}/>:null}
+
+                        <button class="username-btn" onClick={this.showFriendData.bind(this)} >{this.props.friendName}</button>
+                        {this.props.display==="block"?<button href="#" className="btn btn-info" onClick={this.handleAddUser.bind(this)}>Add Friend</button>:null}
+                        {(this.state.showFriend) ? <Redirect to={{pathname:"/User",state:{userId:this.props.friendId}}}/>: null}
                     </h5>
-                    <a href="#" className="btn float-button btn-danger">x</a><br /><br />
+                    <a href="#" onClick={this.handleRemoveFriend.bind(this)} className="btn float-button btn-danger">x</a><br /><br />
                 </div>
             </div>
 

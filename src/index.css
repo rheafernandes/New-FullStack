@@ -124,7 +124,9 @@ body{
   width: 6em;
 }
 
-.friend-card a{
+.username-btn{
+  background: none;
+  border: none;
   color: #17a2b8;
 }
 

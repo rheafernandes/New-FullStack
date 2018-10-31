@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 export default class RecommendationCard extends Component {
+
+    handleAddUser(e){
+        this.props.addFriend(this.props.friendId);
+    }
+
     render() {
         return (
             <div className="card col-sm-12 mx-auto my-5 recommendation-card" >
@@ -9,7 +14,7 @@ export default class RecommendationCard extends Component {
                         <a href="#">{this.props.friendName}</a>
 
                     </h5>
-                    {/* <a href="#" className="btn float-button btn-danger">x</a><br /><br /> */}
+                    <button onClick={this.handleAddUser.bind(this)} className="btn btn-info">Add Friend</button>
                 </div>
             </div>
 

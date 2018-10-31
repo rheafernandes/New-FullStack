@@ -26,8 +26,8 @@ export default class MainGrid extends Component {
 
                                 {
                                     this.props.dispChange === false ?
-                                        this.props.friendList.map(friend => <FriendCards friendName={friend.name} friendId={friend.id} />)
-                                        : this.props.friendList.map(searched => <FriendCards friendName={searched.name} friendId={friend.id} />)
+                                        this.props.friendList.map(friend => <FriendCards friendName={friend.name} changeUserPage={this.props.changeUserPage} friendId={friend.id} display="none" removeFriend={this.props.removeFriend} />)
+                                        : this.props.friendList.map(searched => <FriendCards friendName={searched.name} friendId={searched.id} addFriend={this.props.addFriend} display="block" />)
                                 }
                             </div>
 
@@ -41,8 +41,8 @@ export default class MainGrid extends Component {
                             <div className="d-flex flex-column">
                                 {
                                     this.props.recommendationDisp === false ?
-                                    this.props.friendList.map(friend => <RecommendationCard friendName={friend.name} />)
-                                    :this.props.friendList.map(friend => <RecommendationCard friendName={friend.name} />)
+                                    this.props.friendList.map(friend => <RecommendationCard friendName={friend.name} friendId={friend.id} addFriend={this.props.addFriend}/>)
+                                    :this.props.friendList.map(friend => <RecommendationCard friendName={friend.name} friendId={friend.id} addFriend={this.props.addFriend}/>)
                                 }
                             </div>
                         </div>
@@ -70,8 +70,8 @@ export default class MainGrid extends Component {
 
                                 {
                                     this.props.dispChange === false ?
-                                        [1, 2, 3, 4, 5, 6, 7].map(friend => <FriendCards friendName={friend.name} />)
-                                        : [1, 2, 3, 4, 5, 5, 6].map(searched => <FriendCards friendName={searched.name} />)
+                                        [1,2,3].map(friend => <FriendCards friendName={friend.name} changeUserPage={this.props.changeUserPage} friendId={friend.id} display="none" removeFriend={this.props.removeFriend}/>)
+                                        : [1,2,3,4].map(searched => <FriendCards friendName={searched.name} friendId={searched.id} addFriend={this.props.addFriend} display="block" />)
                                 }
                             </div>
 
@@ -85,8 +85,8 @@ export default class MainGrid extends Component {
                             <div className="d-flex flex-column">
                                 {
                                     this.props.recommendationDisp === false ?
-                                    [1,2,3,4,5,6].map(friend => <RecommendationCard friendName={friend.name} />)
-                                    :[1,2,3,4,5,6].map(friend => <RecommendationCard friendName={friend.name} />)
+                                    [1,2,3,4,5,6].map(friend => <RecommendationCard friendName={friend.name} friendId={friend.id} addFriend={this.props.addFriend} />)
+                                    :[1,2,3,4,5,6].map(friend => <RecommendationCard friendName={friend.name} friendId={friend.id} addFriend={this.props.addFriend}/>)
                                 }
                             </div>
                         </div>

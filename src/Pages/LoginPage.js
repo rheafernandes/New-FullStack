@@ -51,7 +51,7 @@ export default class LoginPage extends React.Component{
                             <input type="text" placeholder="Enter Username" className="form-control" onChange={this.handleOnChangeInput.bind(this)}/>
                             <button className="btn btn-info" onClick={this.handleLoginUser.bind(this, this.state.id)}>Login</button>
                         </form>
-                        {(this.state.userPresent) ? <Redirect to={{pathname:`/User/${this.state.id}`,state:{userId:this.state.id}}} />: <Redirect to="/loginPage" />}
+                        {(this.state.userPresent) ? <Redirect to={{pathname:"/User",state:{userId:this.state.id}}}/>: <Redirect to="/loginPage" />}
                     </div>
                 </div>
             </Fragment>
