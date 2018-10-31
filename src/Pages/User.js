@@ -10,7 +10,7 @@ export default class User extends Component {
     super(props);
     this.state = {
       user: "",
-      friends: [1, 2, 3, 4, 5, 6, 7],
+      friends: "",
       searchValue: "",
       searchedUsers: "",
       dispChange: false,
@@ -68,9 +68,12 @@ export default class User extends Component {
       userId: this.props.location.state.userId,
       friendId: friendId
     }
-    axios.put(`http://localhost:3001/users/${this.props.location.state.userId}/${friendId}`,"some data")
+    axios.put(`http://localhost:3001/users/${this.props.location.state.userId}/${friendId}`)
     .then(res =>{
-      this.setState(()=>({user:res.data}))
+      console.log("adding a friend...")
+      axios.get('http://localhost:3001/users/${this.props.location.state.userId}').then(res=>{
+        this.setState(()=>({friends:res.data}))
+      })
     }
 
     )
@@ -125,6 +128,14 @@ export default class User extends Component {
       ).catch(err => {
         console.log("Error retreiving Info");
       });
+      // axios.get(`http://localhost:3001/users/${this.props.location.state.userId}`)
+      // .then(res =>
+      //   this.setState({
+      //     friends: res.data.friends
+      //   })
+      //   ).catch(err => {
+      //     console.log("Error retreiving Info");
+      //   });
   }
   changeUserPage() {
     axios.get(`http://localhost:3001/users/${this.props.location.state.userId}`)

@@ -53,8 +53,8 @@ export default class MainGrid extends Component {
         } else {
 
             return (
-                <div className="container-fluid d-flex main-grid">
-                    <div className="row d-flex">
+                <div className="container-fluid main-grid">
+                    <div className="row">
                         <div className="col-sm-3 text-center profile-info">
                             <h5 class="info-heading text-info">PROFILE INFORMATION</h5>
                             <ProfileCard userInfo={this.props.userInfo} userId={this.props.userId} />
@@ -69,9 +69,8 @@ export default class MainGrid extends Component {
                             <div className="d-flex flex-row">
 
                                 {
-                                    this.props.dispChange === false ?
-                                        [1,2,3].map(friend => <FriendCards friendName={friend.name} changeUserPage={this.props.changeUserPage} friendId={friend.id} display="none" removeFriend={this.props.removeFriend}/>)
-                                        : [1,2,3,4].map(searched => <FriendCards friendName={searched.name} friendId={searched.id} addFriend={this.props.addFriend} display="block" />)
+                                    this.props.dispChange === true ?[1,2,3,4].map(searched => <FriendCards friendName={searched.name} friendId={searched.id} addFriend={this.props.addFriend} display="block" />)
+                                    :null
                                 }
                             </div>
 
