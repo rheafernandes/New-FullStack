@@ -6,8 +6,12 @@ body{
 .container-fluid{
   padding-left:0;
 }
+.bg-transparent{
+    background-image: url('./images/New-York-Flare-Blue-City-Sky-iPhone-6-wallpaper-1.jpg');
+}
 .section-bg {
-  background-image: url('./images/New-York-Flare-Blue-City-Sky-iPhone-6-wallpaper-1.jpg');
+  background-color:whitesmoke;
+  /* background-image: url('./images/New-York-Flare-Blue-City-Sky-iPhone-6-wallpaper-1.jpg'); */
 }
 
 .nav-item a{
