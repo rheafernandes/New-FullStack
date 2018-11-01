@@ -11,16 +11,16 @@ export default class MainGrid extends Component {
             return (
                 <div className="container-fluid  main-grid">
                     <div className="row ">
-                        <div className="col-sm-3 text-center profile-info">
-                            <h5 class="info-heading text-info">PROFILE INFORMATION</h5>
-                            <ProfileCard userInfo={this.props.userInfo} userId={this.props.userId} />
+                        <div className="col-sm-3 section-bg  text-center profile-info">
+                            <h5 class=" grey-section info-heading text-dark">My Profile</h5>
+                            <ProfileCard userInfo={this.props.userInfo} friendsCount={this.props.friendList.length} userId={this.props.userId} />
                         </div>
 
                         <div className="col-sm-6 text-center friend-list">
                             {
                                 this.props.dispChange === false ?
-                                    <h5 class="info-heading text-info">FRIENDS</h5>
-                                    : <h5 class="info-heading text-info">RESULTS</h5>
+                                    <h5 class="info-heading text-dark">Friends</h5>
+                                    : <h5 class="info-heading text-dark">Results</h5>
                             }
                             <div className="d-flex flex-row">
 
@@ -35,8 +35,8 @@ export default class MainGrid extends Component {
                         <div className="col-sm-3 text-center recommendation-list">
                             {
                                 this.props.recommendationDisp === false ?
-                                    <h5 class="info-heading text-info">RECOMMENDATION 1</h5>
-                                    : <h5 class="info-heading text-info">RECOMMENDATION 2</h5>
+                                    <h5 class="info-heading text-dark">You may know</h5>
+                                    : <h5 class="info-heading text-dark">Also may know</h5>
                             }
                             <div className="d-flex flex-column">
                                 {
@@ -55,16 +55,16 @@ export default class MainGrid extends Component {
             return (
                 <div className="container-fluid main-grid">
                     <div className="row">
-                        <div className="col-sm-3 text-center profile-info">
-                            <h5 class="info-heading text-info">PROFILE INFORMATION</h5>
+                        <div className="col-sm-3 section-bg  text-center profile-info">
+                            <h5 class=" grey-section info-heading text-dark">My Profile</h5>
                             <ProfileCard userInfo={this.props.userInfo} userId={this.props.userId} />
                         </div>
 
                         <div className="col-sm-6 text-center friend-list">
                             {
                                 this.props.dispChange === false ?
-                                    <h5 class="info-heading text-info">FRIENDS</h5>
-                                    : <h5 class="info-heading text-info">RESULTS</h5>
+                                    <h5 class="info-heading text-dark">Friends</h5>
+                                    : <h5 class="info-heading text-dark">Results</h5>
                             }
                             <div className="d-flex flex-row">
 
@@ -76,11 +76,11 @@ export default class MainGrid extends Component {
                             </div>
 
                         </div>
-                        <div className="col-sm-3 text-center recommendation-list">
+                        <div className="col-sm-3  text-center recommendation-list">
                             {
                                 this.props.recommendationDisp === false ?
-                                    <h5 class="info-heading text-info">RECOMMENDATION 1</h5>
-                                    : <h5 class="info-heading text-info">RECOMMENDATION 2</h5>
+                                    <h5 class="info-heading text-dark">Add Some Friends</h5>
+                                    : <h5 class="info-heading text-dark">A few more</h5>
                             }
                             <div className="d-flex flex-column">
                                 {

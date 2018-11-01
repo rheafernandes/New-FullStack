@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Chewy|Permanent+Marker|Satisfy');
 body{
   /* overflow: hidden; */
-  background: url('./images/profile_bg.jpg');
+  /* background: url('./images/profile_bg.jpg'); */
+}
+.container-fluid{
+  padding-left:0;
+}
+.section-bg {
+  background-color:whitesmoke;
 }
 
 .nav-item a{
-  color: #5bc0de;
+  color: black;
   text-decoration: none;
 }
 
@@ -36,6 +42,7 @@ body{
 .our-logo{
   font-family: 'Satisfy', cursive;
   font-size:2rem;
+  text-shadow: 2px 2px 1px gray;
 }
 .card-body{
   padding-left:0;
@@ -43,8 +50,9 @@ body{
 }
 
 .card{
-    position:relative;
-    width:18rem;
+  position:relative;
+  width:18rem;
+  border-radius:0;
 }
 
 .float-button{
@@ -52,7 +60,7 @@ body{
   color: whitesmoke;
   position:absolute;
   top:-20px;
-  right:-10px;
+  right:-15px;
   z-index:1;
 }
 
@@ -62,12 +70,10 @@ body{
 
 .info-heading{
   padding: 0.2em;
-  border-radius: 0.2em;
-  background: #343a40;
-  font-family: Arial, Helvetica, sans-serif;
+  /* border-radius: 0.2em; */
+  font-family: 'Satisfy', cursive;
   font-size: 1.5em;
-  color: #00aced;
-  box-shadow:5px 5px 5px gray;
+  /* box-shadow:5px 5px 5px gray; */
 }
 
 .jumbotron{
@@ -89,7 +95,20 @@ body{
 }
 
 .profile-card{
+  background: whitesmoke;
   box-shadow: 5px 5px 5px gray;
+}
+
+.profile-card img{
+  height: 40vh;
+  width: 20vw;
+  margin:5vh 1vw;
+  margin-bottom:0;
+}
+
+.profile-card h5{
+  font-family:'Satisfy', cursive;
+  font-size: 1.5em;
 }
 
 .friend-list{
@@ -105,7 +124,7 @@ body{
 }
 
 .friend-card{
-  background: #343a40;
+  background-image: url('./images/New-York-Flare-Blue-City-Sky-iPhone-6-wallpaper-1.jpg');
   padding: 1em;
   height: 12em;
   text-align: center;
@@ -114,31 +133,34 @@ body{
 
 .recommendation-card{
   padding-top: 1em;
-  background: #343a40;
+  background-image: url('./images/New-York-Flare-Blue-City-Sky-iPhone-6-wallpaper-1.jpg');
   height: 13em;
   width: 12em;
   box-shadow:5px 5px 5px gray;
 }
 
 .recommendation-card a{
-  color: #17a2b8;
+  color: #000000;
+  font-family: 'Satisfy', cursive;
 }
 
 
 .recommendation-card img{
   margin: 0 auto;
-  height: 6em;
+  height: 5em;
   width: 6em;
 }
 
 .username-btn{
+  padding:0;
   background: none;
   border: none;
-  color: #17a2b8;
+  font-family: 'Satisfy', cursive;
+  font-size: 1em;
+  color: #000000;
 }
 
 .bg-image{
-  border: 1px solid #17a2b8; 
   background: url('./images/friend_bg.jpg') no-repeat; 
   height: 100vh;
   background-size: cover;
@@ -189,4 +211,8 @@ body{
 
 a{
   text-decoration: none;
+}
+
+.col-sm-6{
+  padding:0;
 }

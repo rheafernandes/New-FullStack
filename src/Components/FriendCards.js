@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
+import { FaUserPlus} from 'react-icons/fa';
+
 
 export default class FriendCards extends Component {
     
@@ -30,15 +32,15 @@ export default class FriendCards extends Component {
     render() {
         return (
             <div className="card col-sm-3 mx-2 my-5 friend-card" >
-                <img className="card-img-top" src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Profile Picture"></img>
+                {/* <img className="card-img-top" src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Profile Picture"></img> */}
                 <div className="card-body text-center">
                     <h5 className="card-title">
 
                         <button class="username-btn" onClick={this.showFriendData.bind(this)} >{this.props.friendName}</button>
-                        {this.props.display==="block"?<button href="#" className="btn btn-info" onClick={this.handleAddUser.bind(this)}>Add Friend</button>:null}
+                        {this.props.display==="block"?<button href="#" className="btn btn-outline-danger" onClick={this.handleAddUser.bind(this)}><FaUserPlus/></button>:null}
                         
                     </h5>
-                    <a href="#" onClick={this.handleRemoveFriend.bind(this)} className="btn float-button btn-danger">x</a><br /><br />
+                    <a href="#" onClick={this.handleRemoveFriend.bind(this)} className="btn float-button btn-outline-danger text-dark"><strong>x</strong></a><br /><br />
                 </div>
                 {(this.state.showFriend) ? <Redirect to={{pathname:"/User",state:{username:this.props.friendId}}}/>: null}
             </div>
