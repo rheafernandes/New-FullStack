@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  font-end:
+    build: .
+    network_mode: host
+    ports:
+      - "8081:8081"

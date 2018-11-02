@@ -28,7 +28,8 @@ export default class Navbar extends Component {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <form className="form-inline my-2 my-lg-0 ml-auto">
-                        <input className="form-control search-input mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={this.props.handleChangedNewEntry.bind(this)} />
+                        <input className="form-control search-input mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={this.props.handleChangedNewEntry.bind(this)} required={true} />
+
                         <div data-toggle="tooltip" title="Toggle Search/Friends" data-placement="bottom">
                         <button className="btn btn-outline-dark search-btn my-2 my-sm-0" type="submit" onClick={this.props.handleChangeDisp.bind(this)}>
                             <FaSearch />                                

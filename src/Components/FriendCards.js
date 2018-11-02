@@ -36,7 +36,7 @@ export default class FriendCards extends Component {
                 <div className="card-body text-center">
                     <h5 className="card-title">
 
-                        <button class="username-btn" onClick={this.showFriendData.bind(this)} >{this.props.friendName}</button>
+                        <button className="username-btn" onClick={this.showFriendData.bind(this)} >{this.props.friendName}</button>
                         {this.props.display==="block"?<button href="#" className="btn btn-outline-danger" onClick={this.handleAddUser.bind(this)}><FaUserPlus/></button>:null}
                         
                     </h5>

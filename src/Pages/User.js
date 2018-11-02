@@ -108,7 +108,7 @@ export default class User extends Component {
     this.setState({ searchValue: e.target.value });
   }
   handleSearchUser() {
-    axios.get(`http://localhost:8080/api/v1/searchusers/${this.state.searchValue}`)
+    axios.get(`http://localhost:8080/api/v1/searchusers/${this.state.username}/${this.state.searchValue}`)
       .then(res =>
       {
         let newSearched=res.data.filter(doc=>doc.username!==this.state.username) //&& doc.username!==friends.username
