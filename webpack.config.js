@@ -40,7 +40,8 @@ var config = {
         historyApiFallback: true,
         inline:true,
         port:8081
-    }
+    },
+    mode:"development"
 };
 
 module.exports = config;
