@@ -6,9 +6,9 @@ body{
 .container-fluid{
   padding-left:0;
 }
-.bg-transparent{
+/* .bg-transparent{
     background-image: url('./images/New-York-Flare-Blue-City-Sky-iPhone-6-wallpaper-1.jpg');
-}
+} */
 .section-bg {
   background-color:whitesmoke;
   /* background-image: url('./images/New-York-Flare-Blue-City-Sky-iPhone-6-wallpaper-1.jpg'); */
@@ -17,6 +17,15 @@ body{
 .nav-item a{
   color: black;
   text-decoration: none;
+}
+
+.search-btn,.search-input{
+  border: 2px solid #F3C3FD;
+}
+
+.search-btn:hover{
+  background: #F3C3FD;
+  border: 1px solid #F3C3FD;
 }
 
 .display-4{
