@@ -17,3 +17,5 @@ EXPOSE 8081
 
 # Container should end with only one CMD command, which kicks off the process for the container
 CMD ["npm", "start"]
+
+
