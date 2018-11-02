@@ -4,7 +4,7 @@
   "description": "Our fullstack UI for Friends recommendation",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server",
+    "start": "./node_modules/.bin/webpack-dev-server --host 0.0.0.0",
     "build": "webpack",
     "prod": "webpack -p && cp src/index.html dist/index.html"
   },
